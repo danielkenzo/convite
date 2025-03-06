@@ -3,6 +3,8 @@ const imageOne = document.querySelector(".image-1");
 const imageTwo = document.querySelector(".image-2");
 const btnYes = document.querySelector(".btn-yes");
 const btnNo = document.querySelector(".btn-no");
+const ratingInput = document.getElementById("rating");
+const ratingValue = document.getElementById("rating-value");
 
 function getRandomNumber(min, max) {
   // Calculate the random number between min and max (inclusive)
@@ -59,4 +61,9 @@ btnYes.addEventListener("click", (e) => {
   btnNo.classList.add("hide");
   imageOne.classList.add("hide");
   imageTwo.classList.remove("hide");
+});
+
+// Atualizando o valor da avaliação
+ratingInput.addEventListener("input", (event) => {
+  ratingValue.textContent = ratingInput.value;
 });
