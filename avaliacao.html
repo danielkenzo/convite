@@ -1,0 +1,25 @@
+/* avaliacao.html */
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Avaliação</title>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <img src="imagens/erm-fingers.gif" alt="please" class="image-1" />
+      <img src="imagens/oh-yay.gif" alt="yes" class="image-2 hide" />
+      <button class="btn btn-yes">Yes</button>
+      <button class="btn btn-no">No</button>
+      
+      <div class="rating">
+        <label for="rating">Avaliação (0 a 10):</label>
+        <input type="range" id="rating" name="rating" min="0" max="10" value="5">
+        <span id="rating-value">5</span>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
