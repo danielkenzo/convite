@@ -1,60 +1,74 @@
-<!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Avaliação</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Avaliação do Programa</h1>
-      <p class="description">Por favor, avalie o programa de 0 a 10 nas barras abaixo:</p>
-      
-      <!-- Primeira barra de avaliação -->
-      <div class="rating">
-        <label for="rating-1">Avaliação 1 (0 a 10):</label>
-        <input type="range" id="rating-1" name="rating-1" min="0" max="10" value="5">
-        <span id="rating-1-value">5</span>
-      </div>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      <!-- Segunda barra de avaliação -->
-      <div class="rating">
-        <label for="rating-2">Avaliação 2 (0 a 10):</label>
-        <input type="range" id="rating-2" name="rating-2" min="0" max="10" value="5">
-        <span id="rating-2-value">5</span>
-      </div>
+.hide {
+  display: none;
+}
 
-      <!-- Terceira barra de avaliação -->
-      <div class="rating">
-        <label for="rating-3">Avaliação 3 (0 a 10):</label>
-        <input type="range" id="rating-3" name="rating-3" min="0" max="10" value="5">
-        <span id="rating-3-value">5</span>
-      </div>
+body {
+  padding: 2rem;
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(to right bottom, #cffafe, #22d3ee);
+  display: flex;
+  flex-direction: column;
+}
 
-      <!-- Botão para voltar para a página inicial -->
-      <a href="index.html" class="btn-next">Voltar para os gifs</a>
-    </div>
+.container {
+  flex: 1;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
 
-    <script>
-      // Atualiza o valor das barras de avaliação dinamicamente
-      const rating1 = document.getElementById("rating-1");
-      const rating1Value = document.getElementById("rating-1-value");
-      rating1.addEventListener("input", () => {
-        rating1Value.textContent = rating1.value;
-      });
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
 
-      const rating2 = document.getElementById("rating-2");
-      const rating2Value = document.getElementById("rating-2-value");
-      rating2.addEventListener("input", () => {
-        rating2Value.textContent = rating2.value;
-      });
+.description {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
 
-      const rating3 = document.getElementById("rating-3");
-      const rating3Value = document.getElementById("rating-3-value");
-      rating3.addEventListener("input", () => {
-        rating3Value.textContent = rating3.value;
-      });
-    </script>
-  </body>
-</html>
+.rating {
+  margin: 20px 0;
+}
+
+.rating label {
+  font-size: 1rem;
+}
+
+.rating input {
+  width: 100%;
+}
+
+.rating span {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.btn-next {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 1rem;
+  font-size: 1.25rem;
+  text-align: center;
+  background-color: #f8fafc;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.btn-next:hover {
+  background-color: #e2e8f0;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
