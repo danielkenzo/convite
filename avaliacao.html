@@ -31,16 +31,12 @@
       <a href="interacao.html" class="btn">Próximo</a>
     </div>
     <script>
-      function updateRatingValue(id) {
-        const ratingInput = document.getElementById(id);
-        const ratingValue = document.getElementById(id + "-value");
-        ratingInput.addEventListener("input", () => {
-          ratingValue.textContent = ratingInput.value;
+      document.querySelectorAll("input[type='range']").forEach(input => {
+        const span = document.getElementById(input.id + "-value");
+        input.addEventListener("input", () => {
+          span.textContent = input.value;
         });
-      }
-      updateRatingValue("rating1");
-      updateRatingValue("rating2");
-      updateRatingValue("rating3");
+      });
     </script>
   </body>
 </html>
