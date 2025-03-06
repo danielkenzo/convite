@@ -103,8 +103,33 @@ body {
   margin-left: 10px;
 }
 
-.rating input[type='range'] {
+.rating input[type="range"] {
   width: 90%;
   max-width: 600px;
   margin-top: 10px;
+  height: 10px; /* Aumentando a espessura da barra */
+  border-radius: 5px; /* Deixa as bordas arredondadas */
+  appearance: none; /* Remove o estilo padrão do navegador */
+  background: #e2e8f0; /* Cor da barra */
+  outline: none;
+  cursor: pointer;
 }
+
+/* Estilizando a "bolinha" que arrasta */
+.rating input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px; /* Tamanho da bolinha */
+  height: 20px;
+  background: #22d3ee; /* Cor da bolinha */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.rating input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #22d3ee;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
