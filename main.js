@@ -29,19 +29,22 @@ btnNextPage2.addEventListener("click", () => {
 // Atualizando o valor da avaliação das 3 barras
 if (ratingInput1) {
   ratingInput1.addEventListener("input", (event) => {
-    ratingValue1.textContent = ratingInput1.value; // Atualiza o valor exibido ao lado da barra 1
+    // Atualiza o valor exibido ao lado da barra 1
+    ratingValue1.textContent = ratingInput1.value;
   });
 }
 
 if (ratingInput2) {
   ratingInput2.addEventListener("input", (event) => {
-    ratingValue2.textContent = ratingInput2.value; // Atualiza o valor exibido ao lado da barra 2
+    // Atualiza o valor exibido ao lado da barra 2
+    ratingValue2.textContent = ratingInput2.value;
   });
 }
 
 if (ratingInput3) {
   ratingInput3.addEventListener("input", (event) => {
-    ratingValue3.textContent = ratingInput3.value; // Atualiza o valor exibido ao lado da barra 3
+    // Atualiza o valor exibido ao lado da barra 3
+    ratingValue3.textContent = ratingInput3.value;
   });
 }
 
