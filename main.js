@@ -1,3 +1,5 @@
+const btnNextPage1 = document.getElementById("btn-next-page1");
+const btnNextPage2 = document.getElementById("btn-next-page2");
 const container = document.getElementById("container");
 const imageOne = document.querySelector(".image-1");
 const imageTwo = document.querySelector(".image-2");
@@ -7,12 +9,20 @@ const ratingInput = document.getElementById("rating");
 const ratingValue = document.getElementById("rating-value");
 
 function getRandomNumber(min, max) {
-  // Calculate the random number between min and max (inclusive)
   const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-
   return randomNumber;
 }
 
+// Navegação entre páginas
+btnNextPage1.addEventListener("click", () => {
+  window.location.href = "page2.html"; // Redireciona para a Página 2
+});
+
+btnNextPage2.addEventListener("click", () => {
+  window.location.href = "page3.html"; // Redireciona para a Página 3
+});
+
+// Funcionalidade do botão "No" (move o botão para outro lugar aleatoriamente)
 btnNo.addEventListener("mouseover", (event) => {
   const containerHeight = container.getBoundingClientRect().height;
   const containerWidth = container.getBoundingClientRect().width;
@@ -64,6 +74,8 @@ btnYes.addEventListener("click", (e) => {
 });
 
 // Atualizando o valor da avaliação
-ratingInput.addEventListener("input", (event) => {
-  ratingValue.textContent = ratingInput.value;
-});
+if (ratingInput) {
+  ratingInput.addEventListener("input", (event) => {
+    ratingValue.textContent = ratingInput.value;
+  });
+}
