@@ -25,13 +25,6 @@ body {
   filter: drop-shadow(5px 5px 20px rgba(0, 0, 0, 0.2));
 }
 
-.container p {
-  font-size: 18px; /* Ajusta o tamanho do texto */
-  text-align: center; /* Centraliza */
-  margin-bottom: 20px; /* Adiciona espaço abaixo do texto */
-  color: #000; /* Garante que o texto não está com cor branca invisível */
-}
-
 .container {
   flex: 1;
   position: relative;
@@ -43,8 +36,10 @@ body {
 
 .image-1,
 .image-2 {
-  display: block;
-  margin: 20px auto;
+  position: absolute;  /* Remova esta linha ou ajuste */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .image-1 {
