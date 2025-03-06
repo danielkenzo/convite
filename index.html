@@ -9,63 +9,10 @@
   <body>
     <img src="imagens/date.png" alt="date?" class="header-img" />
     <div class="container" id="container">
+      <img src="imagens/erm-fingers.gif" alt="please" class="image-1" />
+      <img src="imagens/oh-yay.gif" alt="yes" class="image-2 hide" />
+      <button class="btn btn-yes">Yes</button>
+      <button class="btn btn-no">No</button>
+      
       <p class="description">Boa noite senhorita Bianca,</p> 
-      <p class="description">Seu prazo de 5 dias úteis para a avaliação do produto entregue no dia 02/03/2025, em frente ao banheiro da Barra Funda está acabando.</p>
-      <p class="description">Por favor, responda as perguntas abaixo:</p>
-
-      <!-- Primeira barra de avaliação -->
-      <div class="rating">
-        <label for="rating">Nota para a mágica realizada (0 a 10):</label>
-        <input type="range" id="rating" name="rating" min="0" max="10" value="5">
-        <span id="rating-value">5</span>
-      </div>
-
-      <!-- Segunda barra de avaliação -->
-      <div class="rating">
-        <label for="rating2">Nota para a criatividade (0 a 10):</label>
-        <input type="range" id="rating2" name="rating2" min="0" max="10" value="5">
-        <span id="rating-value2">5</span>
-      </div>
-
-      <!-- Terceira barra de avaliação -->
-      <div class="rating">
-        <p class="description">Nota para o local de entrega (0 a 10):</p> 
-        <input type="range" id="rating3" name="rating3" min="0" max="10" value="5">
-        <span id="rating-value3">5</span>
-      </div>
-
-      <!-- Botão para navegar para a página com os GIFs e botões -->
-      <button class="btn btn-next">
-        Próxima página
-      </button>
-    </div>
-
-    <script>
-      // Atualizar o valor exibido ao mover a barra de avaliação
-      const rating1 = document.getElementById('rating');
-      const ratingValue1 = document.getElementById('rating-value');
-      rating1.addEventListener('input', () => {
-        ratingValue1.textContent = rating1.value;
-      });
-
-      const rating2 = document.getElementById('rating2');
-      const ratingValue2 = document.getElementById('rating-value2');
-      rating2.addEventListener('input', () => {
-        ratingValue2.textContent = rating2.value;
-      });
-
-      const rating3 = document.getElementById('rating3');
-      const ratingValue3 = document.getElementById('rating-value3');
-      rating3.addEventListener('input', () => {
-        ratingValue3.textContent = rating3.value;
-      });
-
-      // Adiciona evento de clique no botão para redirecionar para a segunda página
-      document.querySelector('.btn-next').addEventListener('click', () => {
-        window.location.href = 'gif-buttons.html'; // Muda para a página gif-buttons.html
-      });
-    </script>
-
-    <script src="main.js"></script>
-  </body>
-</html>
+      <p class="description">Seu prazo de 5 dias úteis para a avaliação do produto entregue no dia 02/03/2025, e
