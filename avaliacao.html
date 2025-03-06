@@ -9,33 +9,18 @@
   <body>
     <div class="container">
       <h2>Avaliação do Produto</h2>
-      
       <div class="rating">
-        <label for="rating1">Avaliação 1 (0 a 10):</label>
-        <input type="range" id="rating1" name="rating1" min="0" max="10" value="5">
-        <span id="rating-value1">5</span>
+        <label for="rating">Avaliação (0 a 10):</label>
+        <input type="range" id="rating" name="rating" min="0" max="10" value="5">
+        <span id="rating-value">5</span>
       </div>
-      
-      <div class="rating">
-        <label for="rating2">Avaliação 2 (0 a 10):</label>
-        <input type="range" id="rating2" name="rating2" min="0" max="10" value="5">
-        <span id="rating-value2">5</span>
-      </div>
-      
-      <div class="rating">
-        <label for="rating3">Avaliação 3 (0 a 10):</label>
-        <input type="range" id="rating3" name="rating3" min="0" max="10" value="5">
-        <span id="rating-value3">5</span>
-      </div>
-      
       <a href="interacao.html" class="btn">Próximo</a>
     </div>
     <script>
-      document.querySelectorAll("input[type='range']").forEach(input => {
-        const span = document.getElementById(input.id + "-value");
-        input.addEventListener("input", () => {
-          span.textContent = input.value;
-        });
+      const ratingInput = document.getElementById("rating");
+      const ratingValue = document.getElementById("rating-value");
+      ratingInput.addEventListener("input", () => {
+        ratingValue.textContent = ratingInput.value;
       });
     </script>
   </body>
