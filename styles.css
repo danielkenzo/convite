@@ -1,3 +1,14 @@
+/* Estilo para o corpo da página */
+body {
+  padding: 2rem;
+  width: 100%;
+  min-height: 100vh; /* Garante que a página ocupe toda a altura da tela */
+  background-image: linear-gradient(to right bottom, #cffafe, #22d3ee);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Garante que o conteúdo ocupe todo o espaço vertical */
+}
+
 /* Estilo para as barras de avaliação */
 .rating {
   margin-bottom: 20px;
@@ -41,8 +52,9 @@
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Adiciona um alinhamento central ao botão */
+/* Centraliza o botão e garante que ele fique no final da página */
 .btn-next {
   display: block;
   margin: 0 auto;
+  margin-top: 40px; /* Garante que o botão fique abaixo das barras de avaliação */
 }
