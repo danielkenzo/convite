@@ -1,81 +1,25 @@
-const btnNextPage1 = document.getElementById("btn-next-page1");
-const btnNextPage2 = document.getElementById("btn-next-page2");
-const container = document.getElementById("container");
-const imageOne = document.querySelector(".image-1");
-const imageTwo = document.querySelector(".image-2");
-const btnYes = document.querySelector(".btn-yes");
-const btnNo = document.querySelector(".btn-no");
-const ratingInput = document.getElementById("rating");
-const ratingValue = document.getElementById("rating-value");
+document.addEventListener("DOMContentLoaded", function () {
+  const ratingSquares = document.querySelectorAll(".rating-square");
 
-function getRandomNumber(min, max) {
-  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-  return randomNumber;
-}
-
-// Navegação entre páginas
-btnNextPage1.addEventListener("click", () => {
-  window.location.href = "page2.html"; // Redireciona para a Página 2
-});
-
-btnNextPage2.addEventListener("click", () => {
-  window.location.href = "page3.html"; // Redireciona para a Página 3
-});
-
-// Funcionalidade do botão "No" (move o botão para outro lugar aleatoriamente)
-btnNo.addEventListener("mouseover", (event) => {
-  const containerHeight = container.getBoundingClientRect().height;
-  const containerWidth = container.getBoundingClientRect().width;
-  const btnHeight = btnNo.getBoundingClientRect().height;
-  const btnWidth = btnNo.getBoundingClientRect().width;
-  const btnTop = btnNo.getBoundingClientRect().top;
-  const btnLeft = btnNo.getBoundingClientRect().left;
-
-  let newTop = btnTop;
-  let newLeft = btnLeft;
-  while (Math.abs(newTop - btnTop) < containerHeight / 3) {
-    newTop = getRandomNumber(0, containerHeight - btnHeight);
+  // Função para atualizar o valor da nota
+  function updateRatingValue(ratingId, ratingValue) {
+    document.getElementById(`rating-value${ratingId}`).textContent = `Nota: ${ratingValue}`;
   }
 
-  while (Math.abs(newLeft - btnLeft) < containerWidth / 3) {
-    newLeft = getRandomNumber(0, containerWidth - btnWidth);
-  }
+  // Atribuir evento de clique a cada quadrado de avaliação
+  ratingSquares.forEach(function (square) {
+    square.addEventListener("click", function () {
+      const ratingId = this.id.substring(0, 7); // Pega "rating1", "rating2" ou "rating3"
+      const ratingValue = this.textContent;
 
-  btnNo.style.top = Math.floor(newTop) + "px";
-  btnNo.style.left = Math.floor(newLeft) + "px";
-});
+      // Atualiza o valor do rating
+      updateRatingValue(ratingId, ratingValue);
 
-btnNo.addEventListener("click", (event) => {
-  const containerHeight = container.getBoundingClientRect().height;
-  const containerWidth = container.getBoundingClientRect().width;
-  const btnHeight = btnNo.getBoundingClientRect().height;
-  const btnWidth = btnNo.getBoundingClientRect().width;
-  const btnTop = btnNo.getBoundingClientRect().top;
-  const btnLeft = btnNo.getBoundingClientRect().left;
-
-  let newTop = btnTop;
-  let newLeft = btnLeft;
-  while (Math.abs(newTop - btnTop) < containerHeight / 3) {
-    newTop = getRandomNumber(0, containerHeight - btnHeight);
-  }
-
-  while (Math.abs(newLeft - btnLeft) < containerWidth / 3) {
-    newLeft = getRandomNumber(0, containerWidth - btnWidth);
-  }
-
-  btnNo.style.top = Math.floor(newTop) + "px";
-  btnNo.style.left = Math.floor(newLeft) + "px";
-});
-
-btnYes.addEventListener("click", (e) => {
-  btnNo.classList.add("hide");
-  imageOne.classList.add("hide");
-  imageTwo.classList.remove("hide");
-});
-
-// Atualizando o valor da avaliação
-if (ratingInput) {
-  ratingInput.addEventListener("input", (event) => {
-    ratingValue.textContent = ratingInput.value;
+      // Destaca o quadrado clicado
+      document.querySelectorAll(`#${ratingId}-0, #${ratingId}-1, #${ratingId}-2, #${ratingId}-3, #${ratingId}-4, #${ratingId}-5, #${ratingId}-6, #${ratingId}-7, #${ratingId}-8, #${ratingId}-9, #${ratingId}-10`).forEach(function (sq) {
+        sq.style.backgroundColor = "#f1f5f9"; // Resetando o fundo
+      });
+      this.style.backgroundColor = "#d1d5db"; // Destacando o fundo do quadrado clicado
+    });
   });
-}
+});
