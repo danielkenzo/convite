@@ -133,3 +133,10 @@ body {
   cursor: pointer;
 }
 
+.gif {
+  display: block;
+  margin: 20px auto; /* Centraliza e adiciona espaço */
+  max-width: 100%; /* Para evitar que fique maior que a tela */
+  width: 200px; /* Ajuste o tamanho conforme necessário */
+}
+
