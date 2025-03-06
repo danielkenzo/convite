@@ -14,6 +14,18 @@
         <input type="range" id="rating" name="rating" min="0" max="10" value="5">
         <span id="rating-value">5</span>
       </div>
+
+      <div class="rating">
+        <label for="rating2">Avaliação (0 a 10):</label>
+        <input type="range" id="rating2" name="rating2" min="0" max="10" value="5">
+        <span id="rating2-value">5</span>
+      </div>
+
+      <div class="rating">
+        <label for="rating3">Avaliação (0 a 10):</label>
+        <input type="range" id="rating3" name="rating3" min="0" max="10" value="5">
+        <span id="rating3-value">5</span>
+      </div>
       <a href="interacao.html" class="btn">Próximo</a>
     </div>
     <script>
@@ -21,6 +33,18 @@
       const ratingValue = document.getElementById("rating-value");
       ratingInput.addEventListener("input", () => {
         ratingValue.textContent = ratingInput.value;
+      });
+
+      const ratingInput2 = document.getElementById("rating2");
+      const ratingValue2 = document.getElementById("rating2-value");
+      ratingInput2.addEventListener("input", () => {
+        ratingValue2.textContent = ratingInput2.value;
+      });
+
+      const ratingInput3 = document.getElementById("rating3");
+      const ratingValue3 = document.getElementById("rating3-value");
+      ratingInput3.addEventListener("input", () => {
+        ratingValue3.textContent = ratingInput3.value;
       });
     </script>
   </body>
