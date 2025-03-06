@@ -1,3 +1,4 @@
+/* avaliacao.html */
 <!DOCTYPE html>
 <html lang="pt">
   <head>
@@ -16,6 +17,12 @@
       </div>
       <a href="interacao.html" class="btn">Próximo</a>
     </div>
-    <script src="main.js"></script>
+    <script>
+      const ratingInput = document.getElementById("rating");
+      const ratingValue = document.getElementById("rating-value");
+      ratingInput.addEventListener("input", () => {
+        ratingValue.textContent = ratingInput.value;
+      });
+    </script>
   </body>
 </html>
