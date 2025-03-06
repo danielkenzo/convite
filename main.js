@@ -5,12 +5,8 @@ const imageOne = document.querySelector(".image-1");
 const imageTwo = document.querySelector(".image-2");
 const btnYes = document.querySelector(".btn-yes");
 const btnNo = document.querySelector(".btn-no");
-const ratingInput1 = document.getElementById("rating1");
-const ratingInput2 = document.getElementById("rating2");
-const ratingInput3 = document.getElementById("rating3");
-const ratingValue1 = document.getElementById("rating-value1");
-const ratingValue2 = document.getElementById("rating-value2");
-const ratingValue3 = document.getElementById("rating-value3");
+const ratingInput = document.getElementById("rating");
+const ratingValue = document.getElementById("rating-value");
 
 function getRandomNumber(min, max) {
   const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -25,28 +21,6 @@ btnNextPage1.addEventListener("click", () => {
 btnNextPage2.addEventListener("click", () => {
   window.location.href = "page3.html"; // Redireciona para a Página 3
 });
-
-// Atualizando o valor da avaliação das 3 barras
-if (ratingInput1) {
-  ratingInput1.addEventListener("input", (event) => {
-    // Atualiza o valor exibido ao lado da barra 1
-    ratingValue1.textContent = ratingInput1.value;
-  });
-}
-
-if (ratingInput2) {
-  ratingInput2.addEventListener("input", (event) => {
-    // Atualiza o valor exibido ao lado da barra 2
-    ratingValue2.textContent = ratingInput2.value;
-  });
-}
-
-if (ratingInput3) {
-  ratingInput3.addEventListener("input", (event) => {
-    // Atualiza o valor exibido ao lado da barra 3
-    ratingValue3.textContent = ratingInput3.value;
-  });
-}
 
 // Funcionalidade do botão "No" (move o botão para outro lugar aleatoriamente)
 btnNo.addEventListener("mouseover", (event) => {
@@ -98,3 +72,10 @@ btnYes.addEventListener("click", (e) => {
   imageOne.classList.add("hide");
   imageTwo.classList.remove("hide");
 });
+
+// Atualizando o valor da avaliação
+if (ratingInput) {
+  ratingInput.addEventListener("input", (event) => {
+    ratingValue.textContent = ratingInput.value;
+  });
+}
