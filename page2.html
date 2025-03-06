@@ -4,17 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Página 2 - Avaliação</title>
+    <title>Página de Avaliação</title>
   </head>
   <body>
     <div class="container">
-      <p class="description">Avalie o produto de 0 a 10:</p>
+      <p class="description">Por favor, avalie os seguintes itens:</p>
       <div class="rating">
-        <label for="rating">Avaliação (0 a 10):</label>
-        <input type="range" id="rating" name="rating" min="0" max="10" value="5">
-        <span id="rating-value">5</span>
+        <label for="rating1">Avaliação 1:</label>
+        <div class="rating-container">
+          <span class="rating-text">Péssimo</span>
+          <div class="rating-square" id="rating1-0">0</div>
+          <div class="rating-square" id="rating1-1">1</div>
+          <div class="rating-square" id="rating1-2">2</div>
+          <div class="rating-square" id="rating1-3">3</div>
+          <div class="rating-square" id="rating1-4">4</div>
+          <div class="rating-square" id="rating1-5">5</div>
+          <div class="rating-square" id="rating1-6">6</div>
+          <div class="rating-square" id="rating1-7">7</div>
+          <div class="rating-square" id="rating1-8">8</div>
+          <div class="rating-square" id="rating1-9">9</div>
+          <div class="rating-square" id="rating1-10">10</div>
+        </div>
+        <span id="rating-value1">Nota: 5</span>
       </div>
-      <button class="btn btn-next" id="btn-next-page2">Ir para a Página 3</button>
+
+      <div class="rating">
+        <label for="rating2">Avaliação 2:</label>
+        <div class="rating-container">
+          <span class="rating-text">Péssimo</span>
+          <div class="rating-square" id="rating2-0">0</div>
+          <div class="rating-square" id="rating2-1">1</div>
+          <div class="rating-square" id="rating2-2">2</div>
+          <div class="rating-square" id="rating2-3">3</div>
+          <div class="rating-square" id="rating2-4">4</div>
+          <div class="rating-square" id="rating2-5">5</div>
+          <div class="rating-square" id="rating2-6">6</div>
+          <div class="rating-square" id="rating2-7">7</div>
+          <div class="rating-square" id="rating2-8">8</div>
+          <div class="rating-square" id="rating2-9">9</div>
+          <div class="rating-square" id="rating2-10">10</div>
+        </div>
+        <span id="rating-value2">Nota: 5</span>
+      </div>
+
+      <div class="rating">
+        <label for="rating3">Avaliação 3:</label>
+        <div class="rating-container">
+          <span class="rating-text">Péssimo</span>
+          <div class="rating-square" id="rating3-0">0</div>
+          <div class="rating-square" id="rating3-1">1</div>
+          <div class="rating-square" id="rating3-2">2</div>
+          <div class="rating-square" id="rating3-3">3</div>
+          <div class="rating-square" id="rating3-4">4</div>
+          <div class="rating-square" id="rating3-5">5</div>
+          <div class="rating-square" id="rating3-6">6</div>
+          <div class="rating-square" id="rating3-7">7</div>
+          <div class="rating-square" id="rating3-8">8</div>
+          <div class="rating-square" id="rating3-9">9</div>
+          <div class="rating-square" id="rating3-10">10</div>
+        </div>
+        <span id="rating-value3">Nota: 5</span>
+      </div>
+
+      <button id="btn-next-page2" class="btn">Ir para a Página 3</button>
     </div>
     <script src="main.js"></script>
   </body>
