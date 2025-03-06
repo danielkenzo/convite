@@ -1,46 +1,51 @@
+const btnNextPage1 = document.getElementById("btn-next-page1");
+const btnNextPage2 = document.getElementById("btn-next-page2");
 const container = document.getElementById("container");
 const imageOne = document.querySelector(".image-1");
 const imageTwo = document.querySelector(".image-2");
 const btnYes = document.querySelector(".btn-yes");
 const btnNo = document.querySelector(".btn-no");
-const ratingInput = document.getElementById("rating");
-const ratingValue = document.getElementById("rating-value");
-
-// Seleciona as barras de avaliação e seus valores
-const rating1 = document.getElementById("rating1");
-const rating2 = document.getElementById("rating2");
-const rating3 = document.getElementById("rating3");
-
+const ratingInput1 = document.getElementById("rating1");
+const ratingInput2 = document.getElementById("rating2");
+const ratingInput3 = document.getElementById("rating3");
 const ratingValue1 = document.getElementById("rating-value1");
 const ratingValue2 = document.getElementById("rating-value2");
 const ratingValue3 = document.getElementById("rating-value3");
 
-// Função para atualizar o valor da barra de avaliação
-function updateRatingValue(rating, ratingValue) {
-  ratingValue.textContent = rating.value;
-}
-
-// Adiciona eventos para atualizar o valor das barras dinamicamente
-rating1.addEventListener("input", function() {
-  updateRatingValue(rating1, ratingValue1);
-});
-
-rating2.addEventListener("input", function() {
-  updateRatingValue(rating2, ratingValue2);
-});
-
-rating3.addEventListener("input", function() {
-  updateRatingValue(rating3, ratingValue3);
-});
-
-// Função para gerar números aleatórios dentro de um intervalo
 function getRandomNumber(min, max) {
-  // Calcular número aleatório entre min e max (inclusive)
   const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
   return randomNumber;
 }
 
-// Movimentação do botão "No"
+// Navegação entre páginas
+btnNextPage1.addEventListener("click", () => {
+  window.location.href = "page2.html"; // Redireciona para a Página 2
+});
+
+btnNextPage2.addEventListener("click", () => {
+  window.location.href = "page3.html"; // Redireciona para a Página 3
+});
+
+// Atualizando o valor da avaliação das 3 barras
+if (ratingInput1) {
+  ratingInput1.addEventListener("input", (event) => {
+    ratingValue1.textContent = ratingInput1.value; // Atualiza o valor exibido ao lado da barra 1
+  });
+}
+
+if (ratingInput2) {
+  ratingInput2.addEventListener("input", (event) => {
+    ratingValue2.textContent = ratingInput2.value; // Atualiza o valor exibido ao lado da barra 2
+  });
+}
+
+if (ratingInput3) {
+  ratingInput3.addEventListener("input", (event) => {
+    ratingValue3.textContent = ratingInput3.value; // Atualiza o valor exibido ao lado da barra 3
+  });
+}
+
+// Funcionalidade do botão "No" (move o botão para outro lugar aleatoriamente)
 btnNo.addEventListener("mouseover", (event) => {
   const containerHeight = container.getBoundingClientRect().height;
   const containerWidth = container.getBoundingClientRect().width;
@@ -63,7 +68,6 @@ btnNo.addEventListener("mouseover", (event) => {
   btnNo.style.left = Math.floor(newLeft) + "px";
 });
 
-// Movimento do botão "No" quando clicado
 btnNo.addEventListener("click", (event) => {
   const containerHeight = container.getBoundingClientRect().height;
   const containerWidth = container.getBoundingClientRect().width;
@@ -86,22 +90,8 @@ btnNo.addEventListener("click", (event) => {
   btnNo.style.left = Math.floor(newLeft) + "px";
 });
 
-// Função para exibir a segunda imagem e esconder a primeira
 btnYes.addEventListener("click", (e) => {
   btnNo.classList.add("hide");
   imageOne.classList.add("hide");
   imageTwo.classList.remove("hide");
-});
-
-// Atualizando o valor da avaliação da primeira página
-ratingInput.addEventListener("input", (event) => {
-  ratingValue.textContent = ratingInput.value;
-});
-
-// Código relacionado à navegação entre páginas
-
-const btnNextPage2 = document.getElementById("btn-next-page2");
-
-btnNextPage2.addEventListener("click", function() {
-  window.location.href = "page3.html"; // Vai para a página 3
 });
