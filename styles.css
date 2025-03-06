@@ -82,36 +82,37 @@ body {
   z-index: 2;
 }
 
-/* Estilos para o novo texto e avaliação */
+/* Estilos para as páginas de avaliação */
 .description {
   margin-top: 2rem;
   font-size: 1.2rem;
   text-align: center;
 }
 
-.rating {
-  margin-top: 2rem;
-  text-align: center;
+.rating-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.rating label {
-  display: block; /* Faz o texto aparecer acima da barra */
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+.rating-square {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f5f9;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-#rating1, #rating2, #rating3 {
-  width: 80%; /* Aumenta o tamanho das barras */
-  height: 30px; /* Aumenta a altura das barras */
+.rating-square:hover {
+  background-color: #e2e8f0;
 }
 
-#rating-value1, #rating-value2, #rating-value3 {
-  font-weight: bold;
-  margin-left: 10px;
-  font-size: 1.2rem;
-}
-
-#rating-value1, #rating-value2, #rating-value3 {
-  display: inline-block;
-  margin-top: 0.5rem;
+.rating-text {
+  font-size: 1rem;
+  margin-right: 5px;
 }
